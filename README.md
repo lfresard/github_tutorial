@@ -74,7 +74,9 @@ From here you have two options:
 * or you don't want to overwrite anything from the master directory for now, and you will create a branch to put your changes on.
 
 
-## 4. Push to the existing repository
+## 4. Solution 1: Push to the existing repository
+
+Here the changes to your files will overwrite the original files in your repository
 ```shell
 DN52eo2r:example_github_repo lfresard$ git push -u origin master
 Counting objects: 3, done.
@@ -85,6 +87,10 @@ To https://github.com/lfresard/github_tutorial.git
 Branch master set up to track remote branch master from origin.
 
 ```
+
+## 5. Solution 2: Create a branch to push your modifications to
+This is when you are worried to make changes to the original files or that you are a collaborator to a project and don't want to erase previous contributions.
+
 
 
 
