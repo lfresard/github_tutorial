@@ -1,3 +1,6 @@
+This is a beginner's tutorial for basic working knowledge of github.
+Created as part of the Montgomery lab workshops week in August 2019. You can also access the slides from this workshope [here](https://docs.google.com/presentation/d/1OuRVkk1c1FjLu0JWE4uUsjk8eqEWilczVa2DsF-n6bg/edit?usp=sharing)
+
 ## 1. Create a local git repository
 ### 1.1 Open a terminal and move to where you want to place the project on your local machine
 
