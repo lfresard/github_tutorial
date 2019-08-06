@@ -50,7 +50,6 @@ Your branch is up-to-date with 'origin/master'.
 Changes to be committed:
   (use "git reset HEAD <file>..." to unstage)
  	new file:   README.md
-
 ```
 Now `README.md` is tracked. But as you can see, changes still need to be committed.
 
@@ -88,7 +87,6 @@ Total 3 (delta 0), reused 0 (delta 0)
 To https://github.com/lfresard/github_tutorial.git
    a8496a8..07de7c9  master -> master
 Branch master set up to track remote branch master from origin.
-
 ```
 
 ## 5. Solution 2: Create a branch to push your modifications to
@@ -103,10 +101,40 @@ Switched to a new branch 'new_branch'
 ```
 After that command you are automatically switched to the new_branch and off the master branch.
 
+If you want to confirm your new branch was created you can run `git branch`
+```shell
+DN52eo2r:example_github_repo lfresard$ git branch
+  master
+* new_branch
+```
 
+The `*` is a pointer to the branch you're at at a given time.
 
+### 5.2 Push branch to Github
 
+```shell
+DN52eo2r:example_github_repo lfresard$ echo "new test" >>README.md 
+DN52eo2r:example_github_repo lfresard$ git commit -m "add new step in readme"
+On branch new_branch
+Changes not staged for commit:
+	modified:   README.md
 
+no changes added to commit
+DN52eo2r:example_github_repo lfresard$ git push -u origin new_branch
+Counting objects: 20, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (13/13), done.
+Writing objects: 100% (20/20), 3.40 KiB | 0 bytes/s, done.
+Total 20 (delta 5), reused 0 (delta 0)
+remote: Resolving deltas: 100% (5/5), done.
+remote: 
+remote: Create a pull request for 'new_branch' on GitHub by visiting:
+remote:      https://github.com/lfresard/github_tutorial/pull/new/new_branch
+remote: 
+To https://github.com/lfresard/github_tutorial.git
+ * [new branch]      new_branch -> new_branch
+Branch new_branch set up to track remote branch new_branch from origin.
+```
 
 
 
