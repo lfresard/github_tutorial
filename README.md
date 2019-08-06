@@ -136,7 +136,8 @@ To https://github.com/lfresard/github_tutorial.git
 Branch new_branch set up to track remote branch new_branch from origin.
 ```
 
-
+### 5.5. Create a pull request
+![Alt text](pull_request1.png?raw=true "Title")
 
 ## Ressources
 * Getting Started - [Installing Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
