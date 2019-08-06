@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-new test
-=======
 This is a beginner's tutorial for basic working knowledge of github.
 Created as part of the Montgomery lab workshops week in August 2019. You can also access the slides from this workshop [here](https://docs.google.com/presentation/d/1OuRVkk1c1FjLu0JWE4uUsjk8eqEWilczVa2DsF-n6bg/edit?usp=sharing)
 
@@ -147,6 +144,3 @@ Branch new_branch set up to track remote branch new_branch from origin.
 * An Intro to Git and GitHub for Beginners ([Tutorial](https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners))
 
 
-
-
->>>>>>> 995ec5a16af304149497411f3a2fd71af89a67e0
