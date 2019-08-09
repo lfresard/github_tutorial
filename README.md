@@ -296,5 +296,5 @@ Branch new_branch set up to track remote branch new_branch from origin.
 * Getting Started - [Installing Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 * [Become a git guru](https://www.atlassian.com/git/tutorials).
 * An Intro to Git and GitHub for Beginners ([Tutorial](https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners))
-* [Resolving conflicts] (https://help.github.com/en/articles/resolving-a-merge-conflict-using-the-command-line)
+* [Resolving conflicts](https://help.github.com/en/articles/resolving-a-merge-conflict-using-the-command-line)
 
