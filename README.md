@@ -94,7 +94,7 @@ Git branches are effectively a pointer to a snapshot of your changes. When you w
 
 This is when you are worried to make changes to the original files or that you are a collaborator to a project and don't want to erase previous contributions.
 
-![Alt text](branches1.png?raw=true "Title")
+![Source Atlassian](branches1.png?raw=true "Title")
 
 ### 5.1. Create a new branch
 The first step is to create a branch on which you will work.
