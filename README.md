@@ -257,7 +257,7 @@ print("hello world")
 
 * 4. Add your changes with `git add hello.py`
 
-* 5. Commit your changes with a comment `git commit -m "Resolved conflict by keeping lower case version"
+* 5. Commit your changes with a comment `git commit -m "Resolved conflict by keeping lower case version"`
 
 
 
