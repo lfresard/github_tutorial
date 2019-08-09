@@ -211,6 +211,22 @@ To https://github.com/lfresard/github_tutorial.git
 Branch master set up to track remote branch master from origin.
 ```
 
+You can use this worflow when you are using branches for small changes that are isolated developments rather than organization tool for the development of long lasting features.
+
+#### 5.2.3. 3-way merge
+What if you are in a situation where while you a developping a new feature on an independant branch, the master branch keeps changing, or otehr branches are also being created by other developpers?
+This is what you will encouter if you have a collaborative project and the fast forward merge cannot work here.
+
+Let's make it an example:
+```shell
+DN52eo2r:example_github_repo lfresard$ git checkout -b great_feature
+DN52eo2r:example_github_repo lfresard$ touch super_cool_scrip_idea.py
+DN52eo2r:example_github_repo lfresard$ git add super_cool_scrip_idea.py 
+DN52eo2r:example_github_repo lfresard$ git commit -m "develop super cool idea"
+DN52eo2r:example_github_repo lfresard$ git merge great_feature
+DN52eo2r:example_github_repo lfresard$ git branch -d great_feature
+```
+
 ### 5.2 Push branch to Github
 
 ```shell
