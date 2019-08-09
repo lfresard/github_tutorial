@@ -263,7 +263,7 @@ print("hello world")
 
 
 ### 5.5. Creating a pull request
-When you do a pull request you are sending a message to your collaborators basically saying "Hey am done with the changes on my side of the project can you guys have a look so we can merge it to the main project?"
+When you do a pull request you are sending a message to your collaborators basically saying `"Hey am done with the changes on my side of the project can you guys have a look so we can merge it to the main project?"`
 In that situation, in case of merging your modification using `git merge` you will file a `pull request`.
 
 
