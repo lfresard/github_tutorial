@@ -150,8 +150,66 @@ Before merging make sure of a couple of things:
 
 
 #### 5.2.2. Fast forward merge
+* Start a new feature
+```shell
+DN52eo2r:example_github_repo lfresard$ git checkout -b new_feature master
+Switched to a new branch 'new_feature'
+```
+* Edit some files
 
+```shell
+DN52eo2r:example_github_repo lfresard$ touch new_script.sh
+DN52eo2r:example_github_repo lfresard$ git add new_script.sh 
+DN52eo2r:example_github_repo lfresard$ git commit -m "Start a script for new feature"
+[new_feature d1f90ab] Start a script for new feature
+ Committer: Laure Fresard <lfresard@DN0a238717.SUNet>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
 
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 new_script.sh
+```
+* Merge in the new_feature branch
+```shell
+DN52eo2r:example_github_repo lfresard$ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 3 commits.
+  (use "git push" to publish your local commits)
+DN52eo2r:example_github_repo lfresard$ git merge new_feature
+Updating 29b2962..d1f90ab
+Fast-forward
+ new_script.sh | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 new_script.sh
+```
+* Delete the branch
+```shell
+DN52eo2r:example_github_repo lfresard$ git branch -d new_feature
+Deleted branch new_feature (was d1f90ab).
+```
+
+* Push those changes to the remote repository
+```shell
+DN52eo2r:example_github_repo lfresard$ git push -u origin master
+Counting objects: 9, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (9/9), 73.89 KiB | 0 bytes/s, done.
+Total 9 (delta 4), reused 0 (delta 0)
+remote: Resolving deltas: 100% (4/4), completed with 1 local object.
+To https://github.com/lfresard/github_tutorial.git
+   cdb3e2f..d1f90ab  master -> master
+Branch master set up to track remote branch master from origin.
+```
 
 ### 5.2 Push branch to Github
 
