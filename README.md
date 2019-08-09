@@ -35,12 +35,12 @@ Untracked files:
 nothing added to commit but untracked files present (use "git add" to track)
 
 ```
-Your `README.md` is tracked but not yet commited. To register the changes you made in your repository you need to add and commit files that were created or modified.
+Your `README.md` is tracked but not yet commited. To register the changes you made in your repository you need to add and commit files that were created or modified. The `git add` command adds a change in the working directory to the staging area. 
 
 ```shell
 DN52eo2r:example_github_repo lfresard$ git add README.md 
 ```
-
+It tells Git that you want to include updates to a particular file in the next commit. However, git add doesn't really affect the repository in any significant way—changes are not actually recorded until you run git commit.
 You can check how things changed by running  `git status` again
 
 ```shell
@@ -54,6 +54,9 @@ Changes to be committed:
 Now `README.md` is tracked. But as you can see, changes still need to be committed.
 
 ## 3. Commit your file
+The `git commit` command captures a snapshot of the project's currently staged changes. Committed snapshots can be thought of as “safe” versions of a project—Git will never change them unless you explicitly ask it to. 
+
+
 
 ```shell
 DN52eo2r:example_github_repo lfresard$ git commit -m "create a readme file"
@@ -71,14 +74,11 @@ After doing this, you may fix the identity used for this commit with:
  create mode 100644 README.md
 ```
 
-From here you have two options:
-* either you want to write over existing files in your directory (typically this is your repo and you want to make the changes you intended to do.
-* or you don't want to overwrite anything from the master directory for now, and you will create a branch to put your changes on.
 
+## 4. Push to the existing repository
+In addition to `git add` and `git commit`, a third command git push is essential for a complete collaborative Git workflow. `git push` is utilized to send the committed changes to remote repositories for collaboration. This enables other team members to access a set of saved changes.
+Here the changes to your files will overwrite the original files in the remote repository.
 
-## 4. Solution 1: Push to the existing repository
-
-Here the changes to your files will overwrite the original files in your repository
 ```shell
 DN52eo2r:example_github_repo lfresard$ git push -u origin master
 Counting objects: 3, done.
@@ -89,19 +89,27 @@ To https://github.com/lfresard/github_tutorial.git
 Branch master set up to track remote branch master from origin.
 ```
 
-## 5. Solution 2: Create a branch to push your modifications to
-This is when you are worried to make changes to the original files or that you are a collaborator to a project and don't want to erase previous contributions.
+## 5. Branches
+Git branches are effectively a pointer to a snapshot of your changes. When you want to **add a new feature** or **fix a bug**—no matter how big or how small—you spawn a new branch to encapsulate your changes. This makes it harder for unstable code to get merged into the main code base, and it gives you the chance to clean up your future's history before merging it into the main branch.
 
+
+![Alt text](branches1.png?raw=true "Title")
+
+A branch represents the tip of a series of commits—it's not a container for commits. 
 
 ### 5.1. Create a new branch
-The first step is to create a branch on which you will work.
+The first step is to create a branch on which you will work. For this you can use either `git branch <branch>`, which does not check out the new branch, or `git checkout -b <branch>` which creates the branch and checks out.
+
 ```shell
 DN52eo2r:example_github_repo lfresard$ git checkout -b new_branch
 Switched to a new branch 'new_branch'
 ```
 After that command you are automatically switched to the new_branch and off the master branch.
 
-If you want to confirm your new branch was created you can run `git branch`
+If you want to confirm your new branch was created you can run `git branch`.
+
+This lists all of the branches in your repository. This is synonymous with `git branch --list`.
+
 ```shell
 DN52eo2r:example_github_repo lfresard$ git branch
   master
@@ -109,6 +117,16 @@ DN52eo2r:example_github_repo lfresard$ git branch
 ```
 
 The `*` is a pointer to the branch you're at at a given time.
+
+### 5.2 Git merge
+
+Merging is Git's way of putting a forked history back together again. The `git merge` command lets you take the independent lines of development created by git branch and integrate them into a single branch.
+
+The changes are affecting the **current branch**.
+
+
+
+If Git encounters a piece of data that is changed in both histories it will be unable to automatically combine them. This scenario is a version control conflict and Git will need user intervention to continue. 
 
 ### 5.2 Push branch to Github
 
