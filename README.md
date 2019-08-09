@@ -267,7 +267,7 @@ When you do a pull request you are sending a message to your collaborators basic
 In that situation, in case of merging your modification using `git merge` you will file a `pull request`.
 
 
-Practically you are requesting that the maintainer of teh project pulls a branch of your repository to their repository.
+Practically you are requesting that the maintainer of the project pulls a branch of your repository to their repository.
 
 * 1. One person creates the feature in a dedicated branch in their local repo.
 * 2. He/She pushes the branch to a public Bitbucket/Github repository.
