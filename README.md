@@ -227,6 +227,41 @@ DN52eo2r:example_github_repo lfresard$ git merge great_feature
 DN52eo2r:example_github_repo lfresard$ git branch -d great_feature
 ```
 
+
+#### 5.2.4. Conflict resolution...
+There is a conflict when the two branches you're trying to merge changed the **same part** of the **same file**. In those cases Git does not know which version to choose.
+When this happens Git stops right before the merge commit so that you can resolve the conflict manually.
+Here is what you can do:
+* 1. Run `git status` to see which files are causing the problem
+```
+On branch master
+Unmerged paths:
+(use "git add/rm ..." as appropriate to mark resolution)
+both modified: hello.py
+```
+* 2. Open your favorite text editor, and navigate to the file that has merge conflicts. To see the beginning of the merge conflict in your file, search the file for the conflict marker `<<<<<<<`. When you open the file in your text editor, you'll see the changes from the HEAD or base branch after the line `<<<<<<< HEAD`. Next, you'll see `=======`, which divides your changes from the changes in the other branch, followed by `>>>>>>> BRANCH-NAME`. 
+
+
+```
+# Print Hello World
+<<<<<<< HEAD
+print("Hello World")
+=======
+print("hello world")
+>>>>>>> branch-a
+```
+
+
+* 3. Decide if you want to keep only your branch's changes, keep only the other branch's changes, or make a brand new change, which may incorporate changes from both branches. Delete the conflict markers `<<<<<<<, =======, >>>>>>>` and make the changes you want in the final merge.
+
+
+* 4. Add your changes with `git add hello.py`
+
+* 5. Commit your changes with a comment `git commit -m "Resolved conflict by keeping lower case version"
+
+
+
+
 ### 5.2 Push branch to Github
 
 ```shell
@@ -260,5 +295,5 @@ Branch new_branch set up to track remote branch new_branch from origin.
 * Getting Started - [Installing Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 * [Become a git guru](https://www.atlassian.com/git/tutorials).
 * An Intro to Git and GitHub for Beginners ([Tutorial](https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners))
-
+* [Resolving conflicts] https://help.github.com/en/articles/resolving-a-merge-conflict-using-the-command-line
 
