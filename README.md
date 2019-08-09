@@ -90,21 +90,27 @@ Branch master set up to track remote branch master from origin.
 ```
 
 ## 5. Branches
-Git branches are effectively a pointer to a snapshot of your changes. When you want to add a new feature or fix a bug—no matter how big or how small—you spawn a new branch to encapsulate your changes. This makes it harder for unstable code to get merged into the main code base, and it gives you the chance to clean up your future's history before merging it into the main branch.
+Git branches are effectively a pointer to a snapshot of your changes. When you want to *add a new feature* or *fix a bug*—no matter how big or how small—you spawn a new branch to encapsulate your changes. This makes it harder for unstable code to get merged into the main code base, and it gives you the chance to clean up your future's history before merging it into the main branch.
 
 This is when you are worried to make changes to the original files or that you are a collaborator to a project and don't want to erase previous contributions.
 
-![Source Atlassian](branches1.png?raw=true "Title")
+![Alt text](branches1.png?raw=true "Title")
+
+A branch represents the tip of a series of commits—it's not a container for commits. 
 
 ### 5.1. Create a new branch
-The first step is to create a branch on which you will work.
+The first step is to create a branch on which you will work. For this you can use either `git branch <branch>`, which does not check out the new branch, or `git checkout -b <branch>` which creates the branch and checks out.
+
 ```shell
 DN52eo2r:example_github_repo lfresard$ git checkout -b new_branch
 Switched to a new branch 'new_branch'
 ```
 After that command you are automatically switched to the new_branch and off the master branch.
 
-If you want to confirm your new branch was created you can run `git branch`
+If you want to confirm your new branch was created you can run `git branch`.
+
+This lists all of the branches in your repository. This is synonymous with `git branch --list`.
+
 ```shell
 DN52eo2r:example_github_repo lfresard$ git branch
   master
@@ -112,6 +118,16 @@ DN52eo2r:example_github_repo lfresard$ git branch
 ```
 
 The `*` is a pointer to the branch you're at at a given time.
+
+### 5.2 Git merge
+
+Merging is Git's way of putting a forked history back together again. The `git merge` command lets you take the independent lines of development created by git branch and integrate them into a single branch.
+
+The changes are affecting the *current branch*.
+
+
+
+If Git encounters a piece of data that is changed in both histories it will be unable to automatically combine them. This scenario is a version control conflict and Git will need user intervention to continue. 
 
 ### 5.2 Push branch to Github
 
