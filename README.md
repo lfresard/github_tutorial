@@ -1,4 +1,5 @@
-This is a beginner's tutorial for basic working knowledge of github.
+# GIT - GITHUB WORKSHOP
+This is tutorial for basic working knowledge of GIT/GITHUB.
 Created as part of the Montgomery lab workshops week in August 2019. You can also access the slides from this workshop [here](https://docs.google.com/presentation/d/1OuRVkk1c1FjLu0JWE4uUsjk8eqEWilczVa2DsF-n6bg/edit?usp=sharing).
 Information here was for the most part retrieved from the ressources cited at the end of this document. Those are good reads if you want to go further.
 
