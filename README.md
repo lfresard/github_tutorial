@@ -262,34 +262,19 @@ print("hello world")
 
 
 
+### 5.5. Creating a pull request
+When you do a pull request you are sending a message to your collaborators basically saying "Hey am done with the changes on my side of the project can you guys have a look so we can merge it to the main project?"
+In that situation, in case of merging your modification using `git merge` you will file a `pull request`.
 
-### 5.2 Push branch to Github
 
-```shell
-DN52eo2r:example_github_repo lfresard$ echo "new test" >>README.md 
-DN52eo2r:example_github_repo lfresard$ git commit -m "add new step in readme"
-On branch new_branch
-Changes not staged for commit:
-	modified:   README.md
+Practically you are requesting that the maintainer of teh project pulls a branch of your repository to their repository.
 
-no changes added to commit
-DN52eo2r:example_github_repo lfresard$ git push -u origin new_branch
-Counting objects: 20, done.
-Delta compression using up to 4 threads.
-Compressing objects: 100% (13/13), done.
-Writing objects: 100% (20/20), 3.40 KiB | 0 bytes/s, done.
-Total 20 (delta 5), reused 0 (delta 0)
-remote: Resolving deltas: 100% (5/5), done.
-remote: 
-remote: Create a pull request for 'new_branch' on GitHub by visiting:
-remote:      https://github.com/lfresard/github_tutorial/pull/new/new_branch
-remote: 
-To https://github.com/lfresard/github_tutorial.git
- * [new branch]      new_branch -> new_branch
-Branch new_branch set up to track remote branch new_branch from origin.
-```
+* 1. One person creates the feature in a dedicated branch in their local repo.
+* 2. He/She pushes the branch to a public Bitbucket/Github repository.
+* 3. He/She files a pull request via Bitbucket/Github
+* 4. The rest of the team review the cove, discusses it and alters it
+* 5. The project maintainer merges the feature into the official repository and closes the pull request.
 
-### 5.5. Create a pull request
 ![Alt text](pull_request1.png?raw=true "Title")
 
 ## Ressources
