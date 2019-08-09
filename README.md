@@ -11,6 +11,8 @@ DN52eo2r:2019_08_workshopweek lfresard$ mkdir example_github_repo
 ### 1.2. Initialize a git repository
 ```shell
 DN52eo2r:example_github_repo lfresard$ git init
+```
+```shell
 Initialized empty Git repository in /Users/lfresard/Documents/Stanford/2019_08_workshopweek/example_github_repo/.git/
 ```
 
@@ -35,12 +37,12 @@ Untracked files:
 nothing added to commit but untracked files present (use "git add" to track)
 
 ```
-Your `README.md` is tracked but not yet commited. To register the changes you made in your repository you need to add and commit files that were created or modified.
+Your `README.md` is tracked but not yet commited. To register the changes you made in your repository you need to add and commit files that were created or modified. The `git add` command adds a change in the working directory to the staging area. 
 
 ```shell
 DN52eo2r:example_github_repo lfresard$ git add README.md 
 ```
-
+It tells Git that you want to include updates to a particular file in the next commit. However, git add doesn't really affect the repository in any significant way—changes are not actually recorded until you run git commit.
 You can check how things changed by running  `git status` again
 
 ```shell
@@ -54,6 +56,9 @@ Changes to be committed:
 Now `README.md` is tracked. But as you can see, changes still need to be committed.
 
 ## 3. Commit your file
+The `git commit` command captures a snapshot of the project's currently staged changes. Committed snapshots can be thought of as “safe” versions of a project—Git will never change them unless you explicitly ask it to. 
+
+
 
 ```shell
 DN52eo2r:example_github_repo lfresard$ git commit -m "create a readme file"
@@ -71,14 +76,11 @@ After doing this, you may fix the identity used for this commit with:
  create mode 100644 README.md
 ```
 
-From here you have two options:
-* either you want to write over existing files in your directory (typically this is your repo and you want to make the changes you intended to do.
-* or you don't want to overwrite anything from the master directory for now, and you will create a branch to put your changes on.
 
+## 4. Push to the existing repository
+In addition to `git add` and `git commit`, a third command git push is essential for a complete collaborative Git workflow. `git push` is utilized to send the committed changes to remote repositories for collaboration. This enables other team members to access a set of saved changes.
+Here the changes to your files will overwrite the original files in the remote repository.
 
-## 4. Solution 1: Push to the existing repository
-
-Here the changes to your files will overwrite the original files in your repository
 ```shell
 DN52eo2r:example_github_repo lfresard$ git push -u origin master
 Counting objects: 3, done.
