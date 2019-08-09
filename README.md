@@ -90,9 +90,8 @@ Branch master set up to track remote branch master from origin.
 ```
 
 ## 5. Branches
-Git branches are effectively a pointer to a snapshot of your changes. When you want to *add a new feature* or *fix a bug*—no matter how big or how small—you spawn a new branch to encapsulate your changes. This makes it harder for unstable code to get merged into the main code base, and it gives you the chance to clean up your future's history before merging it into the main branch.
+Git branches are effectively a pointer to a snapshot of your changes. When you want to **add a new feature** or **fix a bug**—no matter how big or how small—you spawn a new branch to encapsulate your changes. This makes it harder for unstable code to get merged into the main code base, and it gives you the chance to clean up your future's history before merging it into the main branch.
 
-This is when you are worried to make changes to the original files or that you are a collaborator to a project and don't want to erase previous contributions.
 
 ![Alt text](branches1.png?raw=true "Title")
 
@@ -123,7 +122,7 @@ The `*` is a pointer to the branch you're at at a given time.
 
 Merging is Git's way of putting a forked history back together again. The `git merge` command lets you take the independent lines of development created by git branch and integrate them into a single branch.
 
-The changes are affecting the *current branch*.
+The changes are affecting the **current branch**.
 
 
 
