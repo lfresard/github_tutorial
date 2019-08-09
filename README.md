@@ -11,8 +11,6 @@ DN52eo2r:2019_08_workshopweek lfresard$ mkdir example_github_repo
 ### 1.2. Initialize a git repository
 ```shell
 DN52eo2r:example_github_repo lfresard$ git init
-```
-```shell
 Initialized empty Git repository in /Users/lfresard/Documents/Stanford/2019_08_workshopweek/example_github_repo/.git/
 ```
 
@@ -91,9 +89,12 @@ To https://github.com/lfresard/github_tutorial.git
 Branch master set up to track remote branch master from origin.
 ```
 
-## 5. Solution 2: Create a branch to push your modifications to
+## 5. Branches
+Git branches are effectively a pointer to a snapshot of your changes. When you want to add a new feature or fix a bug—no matter how big or how small—you spawn a new branch to encapsulate your changes. This makes it harder for unstable code to get merged into the main code base, and it gives you the chance to clean up your future's history before merging it into the main branch.
+
 This is when you are worried to make changes to the original files or that you are a collaborator to a project and don't want to erase previous contributions.
 
+![Alt text](branches1.png?raw=true "Title")
 
 ### 5.1. Create a new branch
 The first step is to create a branch on which you will work.
