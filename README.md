@@ -1,7 +1,7 @@
 # GIT - GITHUB WORKSHOP
 This is tutorial for basic working knowledge of GIT/GITHUB.
 Created as part of the Montgomery lab workshops week in August 2019. You can also access the slides from this workshop [here](https://docs.google.com/presentation/d/1OuRVkk1c1FjLu0JWE4uUsjk8eqEWilczVa2DsF-n6bg/edit?usp=sharing).
-Information here was for the most part retrieved from the ressources cited at the end of this document. Those are good reads if you want to go further.
+Information here was for the most part retrieved from the resources cited at the end of this document. Those are good reads if you want to go further.
 
 ## 1. Create a local git repository
 ### 1.1. Open a terminal and move to where you want to place the project on your local machine
@@ -277,9 +277,10 @@ Practically you are requesting that the maintainer of the project pulls a branch
 
 ![Alt text](pull_request1.png?raw=true "Title")
 
-## Ressources
+## Resources
 * Getting Started - [Installing Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 * [Become a git guru](https://www.atlassian.com/git/tutorials).
 * An Intro to Git and GitHub for Beginners ([Tutorial](https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners))
 * [Resolving conflicts](https://help.github.com/en/articles/resolving-a-merge-conflict-using-the-command-line)
+* [Git best practices](http://sethrobertson.github.io/GitBestPractices/)
 
