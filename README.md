@@ -277,6 +277,65 @@ Practically you are requesting that the maintainer of the project pulls a branch
 
 ![Alt text](pull_request1.png?raw=true "Title")
 
+## 6. Undoing mistakes
+
+I delete a file, and then realize it was important only after committing the change.
+
+```
+DN52eo2r:example_github_repo git rm super_cool_scrip_idea.py
+rm 'super_cool_scrip_idea.py'
+DN52eo2r:example_github_repo git commit -m "deleted important file"
+[master 551b2c4] deleted important file
+ Committer: mikegloudemans
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100644 super_cool_scrip_idea.py
+```
+
+I use `git log` to view the changes and remember which commit was the one before I made a mistake.
+```
+DN52eo2r:example_github_repo git log --pretty=oneline
+551b2c49847bdb8f62e9293def4b07f967810432 deleted important file
+bce12d1a58fd490425f580c0ba094383ab4a5199 Added link to git best practices site
+cebc1802c4c91f64a2404b10b1ecabf6ffd0f86d Update README.md
+0876a41309ffc288d379b4e3084707d5facbe553 Update README.md
+…
+```
+
+Then I use git revert to "undo" the last change (the one referenced by the pointer HEAD).
+```
+DN52eo2r:example_github_repo git revert HEAD
+[master 36a6a69] Revert "deleted important file"
+ Committer: mikegloudemans
+ create mode 100644 super_cool_scrip_idea.py
+```
+
+Notice in the output that the operation is not recognized by Git as an undo, but as 
+a `create` on the deleted file, the opposite of the `delete` that we reverted.
+The git history itself is not changed because git revert doesn’t delete any previous commits. 
+It just creates a new commit that is the opposite of the previous commit.
+
+We verify now that we've fixed the issue:
+
+```
+DN52eo2r:example_github_repo git log --pretty=oneline
+36a6a693ab4f14f484d57c4ec2ad3ddeaab5a85b Revert "deleted important file"
+551b2c49847bdb8f62e9293def4b07f967810432 deleted important file
+bce12d1a58fd490425f580c0ba094383ab4a5199 Added link to git best practices site
+cebc1802c4c91f64a2404b10b1ecabf6ffd0f86d Update README.md
+...
+```
+
+But if we run `ls`, we see that the deleted file is still missing. Luckily,
+we can easily recover it now by just checking it out from the master branch.
+
+```
+DN52eo2r:example_github_repo git checkout HEAD super_cool_scrip_idea.py
+```
+
+and a quick `ls` shows that we've recovered the missing file.
+
+
+
 ## Resources
 * Getting Started - [Installing Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 * [Become a git guru](https://www.atlassian.com/git/tutorials).
