@@ -279,7 +279,9 @@ Practically you are requesting that the maintainer of the project pulls a branch
 
 ## 6. Undoing mistakes
 
-I delete a file, and then realize it was important only after committing the change.
+### Reverting (undoing) a commit
+
+Say we delete a file, and then realize it was important only after committing the change.
 
 ```
 DN52eo2r:example_github_repo git rm super_cool_scrip_idea.py
@@ -291,7 +293,7 @@ DN52eo2r:example_github_repo git commit -m "deleted important file"
  delete mode 100644 super_cool_scrip_idea.py
 ```
 
-I use `git log` to view the changes and remember which commit was the one before I made a mistake.
+We use `git log` to view the changes and remember which commit was the one before we made a mistake.
 ```
 DN52eo2r:example_github_repo git log --pretty=oneline
 551b2c49847bdb8f62e9293def4b07f967810432 deleted important file
@@ -301,7 +303,7 @@ cebc1802c4c91f64a2404b10b1ecabf6ffd0f86d Update README.md
 …
 ```
 
-Then I use git revert to "undo" the last change (the one referenced by the pointer HEAD).
+Then we use git revert to "undo" the last change (the one referenced by the pointer HEAD).
 ```
 DN52eo2r:example_github_repo git revert HEAD
 [master 36a6a69] Revert "deleted important file"
@@ -324,6 +326,14 @@ bce12d1a58fd490425f580c0ba094383ab4a5199 Added link to git best practices site
 cebc1802c4c91f64a2404b10b1ecabf6ffd0f86d Update README.md
 ...
 ```
+
+Like a typical undo operation, `git revert` can be used successively as many times as needed to get 
+back to the desired project version. In the above example, if we wanted to continue undoing
+changes, we could use `git revert bce12d1a58fd490425f580c0ba094383ab4a5199`, then `git revert cebc1802c4c91f64a2404b10b1ecabf6ffd0f86d`, etc.
+It's important here though that we tell it which (older) commit to undo; otherwise it will just go back and forth between
+deleting and restoring the deleted file instead of going further back in history.
+
+### Recovering deleted files with `git checkout`
 
 But if we run `ls`, we see that the deleted file is still missing. Luckily,
 we can easily recover it now by just checking it out from the master branch.
