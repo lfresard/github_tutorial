@@ -327,23 +327,33 @@ cebc1802c4c91f64a2404b10b1ecabf6ffd0f86d Update README.md
 ...
 ```
 
+We can also check with `ls` to see that the file is back.
+
 Like a typical undo operation, `git revert` can be used successively as many times as needed to get 
 back to the desired project version. In the above example, if we wanted to continue undoing
 changes, we could use `git revert bce12d1a58fd490425f580c0ba094383ab4a5199`, then `git revert cebc1802c4c91f64a2404b10b1ecabf6ffd0f86d`, etc.
 It's important here though that we tell it which (older) commit to undo; otherwise it will just go back and forth between
-deleting and restoring the deleted file instead of going further back in history.
+deleting and restoring the deleted file instead of going further back in commit history.
 
 ### Recovering deleted files with `git checkout`
 
-But if we run `ls`, we see that the deleted file is still missing. Luckily,
-we can easily recover it now by just checking it out from the master branch.
+Suppose instead that we accidentally deleted the file from our local directory using the standard Linux
+`rm` (instead of `git rm`). 
+
+```
+DN52eo2r:example_github_repo rm super_cool_scrip_idea.py
+```
+
+Since Git is smart and thinks we're smart too, it assumes this change was intentional.
+We haven't committed this change yet (and git doesn't know about it at all yet),
+so using `git revert` won't help us out. Luckily, we can recover it at any time
+by just checking it out from the master branch:
 
 ```
 DN52eo2r:example_github_repo git checkout HEAD super_cool_scrip_idea.py
 ```
 
-and a quick `ls` shows that we've recovered the missing file.
-
+and a quick `ls` shows that we've restored the deleted file.
 
 
 ## Resources
